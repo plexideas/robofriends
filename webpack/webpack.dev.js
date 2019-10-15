@@ -33,7 +33,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: `${APP_DIR}/templates/index.html`,
-      title: 'RoboFriends',
+      title: 'RobotFriends',
     }),
   ],
 };

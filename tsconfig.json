@@ -19,6 +19,7 @@
     "baseUrl": "src",
     "paths": {
       "@components": ["src/components/*"],
+      "@containers": ["src/containers/*"],
     }
   },
   "exclude": [
