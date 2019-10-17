@@ -1,5 +1,5 @@
-import React, { Component } from 'containers/app/node_modules/react';
-import { connect } from 'containers/app/node_modules/react-redux';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import RobotModel from '../../models/robot-model';
 import { AppState } from '../../reducers';
 import { actionFetchRobot } from '../../actions/robot-list-action';
