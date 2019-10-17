@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import App from './ASFSAF/asdaSFD';
+import App from './app/app';
 
 const RootView: React.StatelessComponent<{}> = () => (
   <Fragment>
