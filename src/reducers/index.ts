@@ -1,18 +1,15 @@
-import { RobotListState, defaultRobotListState, robotListReducer } from './robotList';
-import { Action } from 'redux';
+import { RobotListState, robotListReducer} from './robot-list-reducer';
+import { SearchBoxState, searchListReducer } from './search-box-reducer';
+import { combineReducers } from 'redux';
 
 export interface AppState {
   list: RobotListState,
+  filter: SearchBoxState,
 }
 
-export function defaultState() {
-  return {
-    list: defaultRobotListState()
-  };
-}
+const mainReducer = combineReducers({
+  list:robotListReducer,
+  filter:searchListReducer,
+});
 
-export function mainReducer(state: AppState = defaultState(), action: Action) {
-  return {
-    list: robotListReducer(state.list, action)
-  };
-}
+export default mainReducer;

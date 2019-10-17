@@ -1,10 +1,10 @@
-import RobotModel from '../models/Robot';
-import { AppActions } from '../actions'
+import RobotModel from '../models/robot-model';
+import { RobotListActions } from '../actions/robot-list-action'
 import {
   ACTION_ROBO_FETCH, 
   ACTION_ROBO_FETCH_SUCCESS, 
   ACTION_ROBO_FETCH_ERROR
-} from '../actions';
+} from '../actions/robot-list-action';
 
 
 export interface RobotListState {
@@ -20,7 +20,7 @@ export function defaultRobotListState() {
   };
 }
 
-export function robotListReducer(state: RobotListState, action: AppActions):RobotListState {
+export function robotListReducer(state: RobotListState = defaultRobotListState(), action: RobotListActions):RobotListState {
   switch(action.type) {
     case ACTION_ROBO_FETCH: 
       return {
@@ -31,7 +31,7 @@ export function robotListReducer(state: RobotListState, action: AppActions):Robo
       return {
         ...state,
         status: 'LOADED',
-        robots: action.robots,
+        robots: action.payload.robots,
       };
     case ACTION_ROBO_FETCH_ERROR:
       return state;

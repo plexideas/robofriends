@@ -1,4 +1,4 @@
-import RobotModel from '../models/Robot';
+import RobotModel from '../models/robot-model';
 
 export const ACTION_ROBO_FETCH = 'ROBO_FETCH';
 export const ACTION_ROBO_FETCH_SUCCESS = 'ROBO_FETCH_SUCCESS';
@@ -10,15 +10,19 @@ export interface IActionRobotFetch {
 
 export interface IActionRobotFetchSuccess {
   type: 'ROBO_FETCH_SUCCESS',
-  robots: RobotModel[],
+  payload: {
+    robots: RobotModel[],
+  }
 };
 
 export interface IActionRobotFetchError {
   type: 'ROBO_FETCH_ERROR',
-  errorMessage: string,
+  payload: {
+    errorMessage: string,
+  }
 };
 
-export type AppActions = IActionRobotFetch | IActionRobotFetchSuccess | IActionRobotFetchError;
+export type RobotListActions = IActionRobotFetch | IActionRobotFetchSuccess | IActionRobotFetchError;
 
 export function actionFetchRobot() {
   return {
