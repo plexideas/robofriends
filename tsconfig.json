@@ -20,7 +20,8 @@
     "paths": {
       "@components": ["src/components/*"],
       "@containers": ["src/containers/*"],
-    }
+    },
+    "esModuleInterop": true
   },
   "exclude": [
     "node_modules"
